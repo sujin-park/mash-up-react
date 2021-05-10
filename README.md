@@ -1,5 +1,5 @@
 # mash-up-react
 
 ### branches
-- main - React Router 까지 작업한 내용
-- redux - Redux
+- react-api-integrate : API 연동 및 React-Router
+- react-redux : Redux까지 정리
