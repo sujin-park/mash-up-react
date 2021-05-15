@@ -1,6 +1,6 @@
 import './App.css';
 import Users from './Users';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link, Switch, Router } from 'react-router-dom';
 import { UsersProvider } from './UsersContext';
 import Home from './Home';
 import About from './About';
@@ -28,7 +28,7 @@ function App() {
         <hr />
       </div>
       <Switch>
-      <Route path="/" component={Home} exact />
+        <Route path="/" component={Home} exact />
         <Route path="/about" component={About} />
         <Route path="/profiles" component={Profiles} />
         <Route path="/history" component={HistorySample} />
