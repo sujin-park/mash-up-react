@@ -12,7 +12,7 @@ const posts = [
     body: 'redux-thunk 딱 한번밖에 안 써봤는데..'
   },
   {
-    id: 1,
+    id: 3,
     title: 'redux-saga도 사용해보자',
     body: 'generator가 어려워서 어렵게 느껴지는걸까'
   }
