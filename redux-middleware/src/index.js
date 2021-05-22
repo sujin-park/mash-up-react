@@ -14,9 +14,15 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import logger from 'redux-logger';
 
 import createSagaMiddleware from 'redux-saga';
-const sagaMiddleware = createSagaMiddleware();
 
 const customHistory = createBrowserHistory();
+
+// saga 내부에서 history 를 사용할 일이 있다면 context 에 history 를 등록해서 사용해주면 된다.
+const sagaMiddleware = createSagaMiddleware({
+  context: {
+    history: customHistory
+  }
+});
 
 const store = createStore(
   rootReducer,
