@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --progress --mode development",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest "
   },
   "dependencies": {
     "clean-webpack-plugin": "^4.0.0-alpha.0",
@@ -16,9 +17,13 @@
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
     "@babel/preset-react": "^7.13.13",
+    "@testing-library/jest-dom": "^5.13.0",
+    "@testing-library/react": "^11.2.7",
+    "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
     "html-webpack-plugin": "^5.3.1",
+    "jest": "^27.0.4",
     "sass": "^1.34.1",
     "sass-loader": "^12.0.0",
     "style-loader": "^2.0.0",
