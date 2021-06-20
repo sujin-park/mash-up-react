@@ -5,4 +5,4 @@
 - react-redux : Redux까지 정리
 - redux-middleware : Redux middleware (thunk, saga) 정리
 - react-ts : React with TypeScript
-- react-webpack : React without create-react-app (with webpack)
+- react-webpack : React without create-react-app (with webpack, testing-library)
