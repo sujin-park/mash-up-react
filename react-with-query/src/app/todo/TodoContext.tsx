@@ -1,4 +1,4 @@
-import React, { useReducer, createContext, useContext, useRef, Dispatch } from 'react';
+import React, { useReducer, createContext, useContext, Dispatch } from 'react';
 
 type Todo = {
   id: number;

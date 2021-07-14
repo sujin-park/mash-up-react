@@ -1,4 +1,12 @@
-import React, { useReducer, createContext, useContext, useRef } from 'react';
+import React, { Dispatch, useReducer, createContext, useContext, useRef } from 'react';
+
+type TodoItem = {
+  id: number;
+  text: string;
+  done: boolean;
+};
+
+type Action = { type: 'CREATE'; todo: TodoItem } | { type: 'TOGGLE'; id: number } | { type: 'REMOVE'; id: number };
 
 const initialTodos = [
   {
@@ -36,19 +44,21 @@ function todoReducer(state, action) {
   }
 }
 
-const TodoStateContext = createContext(null);
-const TodoDispatchContext = createContext(null);
+type TodoDispatch = Dispatch<Action>;
+const TodoStateContext = createContext<TodoItem[]>([]);
+const TodoDispatchContext = createContext<TodoDispatch | null>(null);
 const TodoNextIdContext = createContext(0);
 
-export function TodoProvider({ children }) {
+type TodoProviderProps = {
+  children: React.ReactNode;
+};
+
+export function TodoProvider({ children }: TodoProviderProps) {
   const [state, dispatch] = useReducer(todoReducer, initialTodos);
-  const nextId = useRef(5);
 
   return (
     <TodoStateContext.Provider value={state}>
-      <TodoDispatchContext.Provider value={dispatch}>
-        <TodoNextIdContext.Provider value={nextId}>{children}</TodoNextIdContext.Provider>
-      </TodoDispatchContext.Provider>
+      <TodoDispatchContext.Provider value={dispatch}>{children}</TodoDispatchContext.Provider>
     </TodoStateContext.Provider>
   );
 }

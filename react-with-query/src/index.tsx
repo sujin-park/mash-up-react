@@ -8,13 +8,11 @@ import { TodoProvider } from './app/todo/TodoContext';
 const queryClient = new QueryClient();
 
 ReactDOM.render(
-  <QueryClientProvider client={queryClient}>
-    <TodoProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </TodoProvider>
-  </QueryClientProvider>,
+  <TodoProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </TodoProvider>,
   document.getElementById('root')
 );
 
